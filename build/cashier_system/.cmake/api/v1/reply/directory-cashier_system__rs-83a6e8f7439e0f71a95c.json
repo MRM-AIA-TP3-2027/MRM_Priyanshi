@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "cashier_system__rs",
+		"source" : "/home/priyanshi/ros2_ws/build/cashier_system/cashier_system__rs"
+	}
+}

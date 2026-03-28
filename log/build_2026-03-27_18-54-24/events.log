@@ -1,0 +1,374 @@
+[0.000000] (-) TimerEvent: {}
+[0.000337] (cashier_system) JobQueued: {'identifier': 'cashier_system', 'dependencies': OrderedDict()}
+[0.000701] (cashier_system) JobStarted: {'identifier': 'cashier_system'}
+[0.005778] (cashier_system) JobProgress: {'identifier': 'cashier_system', 'progress': 'cmake'}
+[0.006344] (cashier_system) Command: {'cmd': ['/usr/bin/cmake', '/home/priyanshi/ros2_ws/src/cashier_system', '-DCMAKE_INSTALL_PREFIX=/home/priyanshi/ros2_ws/install/cashier_system'], 'cwd': '/home/priyanshi/ros2_ws/build/cashier_system', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_IN:en'), ('USER', 'priyanshi'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/priyanshi/ros2_ws/install/cashier_system/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/priyanshi'), ('OLDPWD', '/home/priyanshi/ros2_ws'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1711'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/priyanshi/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'priyanshi'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'priyanshi'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/priyanshi-Victus-by-HP-Gaming-Laptop-15-fa2xxx:@/tmp/.ICE-unix/1679,unix/priyanshi-Victus-by-HP-Gaming-Laptop-15-fa2xxx:/tmp/.ICE-unix/1679'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/278d6712_c81a_45ef_b34b_07a6790fb086'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.8AUWM3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.116'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/priyanshi/ros2_ws/install/cashier_system:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/priyanshi/ros2_ws/build/cashier_system'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/priyanshi/ros2_ws/install/cashier_system:/opt/ros/humble')]), 'shell': False}
+[0.063615] (cashier_system) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.100108] (-) TimerEvent: {}
+[0.108246] (cashier_system) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.117269] (cashier_system) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.200222] (-) TimerEvent: {}
+[0.201960] (cashier_system) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.209178] (cashier_system) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.209349] (cashier_system) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.209508] (cashier_system) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.211532] (cashier_system) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.293773] (cashier_system) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.299102] (cashier_system) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.299322] (cashier_system) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.299503] (cashier_system) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.300266] (-) TimerEvent: {}
+[0.300595] (cashier_system) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.400400] (-) TimerEvent: {}
+[0.428035] (cashier_system) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.494311] (cashier_system) StdoutLine: {'line': b'-- Found rclcpp: 16.0.18 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.500561] (-) TimerEvent: {}
+[0.517197] (cashier_system) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.519744] (cashier_system) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.524478] (cashier_system) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.531565] (cashier_system) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.540766] (cashier_system) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.565458] (cashier_system) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.566874] (cashier_system) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.600674] (-) TimerEvent: {}
+[0.639848] (cashier_system) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[0.663833] (cashier_system) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[0.696610] (cashier_system) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.700866] (-) TimerEvent: {}
+[0.702050] (cashier_system) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[0.779374] (cashier_system) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[0.779781] (cashier_system) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[0.800966] (-) TimerEvent: {}
+[0.865830] (cashier_system) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[0.867166] (cashier_system) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[0.898505] (cashier_system) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.1 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[0.901026] (-) TimerEvent: {}
+[0.905861] (cashier_system) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[1.001227] (-) TimerEvent: {}
+[1.090441] (cashier_system) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[1.101397] (-) TimerEvent: {}
+[1.201714] (-) TimerEvent: {}
+[1.302107] (-) TimerEvent: {}
+[1.360932] (cashier_system) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.402286] (-) TimerEvent: {}
+[1.450755] (cashier_system) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.466588] (cashier_system) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") \n'}
+[1.467294] (cashier_system) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[1.484287] (cashier_system) StdoutLine: {'line': b'-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") \n'}
+[1.484371] (cashier_system) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[1.484409] (cashier_system) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[1.484441] (cashier_system) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[1.498875] (cashier_system) StdoutLine: {'line': b'-- Found PythonExtra: .so  \n'}
+[1.502387] (-) TimerEvent: {}
+[1.583593] (cashier_system) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):\n'}
+[1.583804] (cashier_system) StderrLine: {'line': b'  Use rosidl_get_typesupport_target() and target_link_libraries() instead of\n'}
+[1.583897] (cashier_system) StderrLine: {'line': b'  rosidl_target_interfaces()\n'}
+[1.583974] (cashier_system) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[1.584048] (cashier_system) StderrLine: {'line': b'  CMakeLists.txt:37 (rosidl_target_interfaces)\n'}
+[1.584121] (cashier_system) StderrLine: {'line': b'\n'}
+[1.584193] (cashier_system) StderrLine: {'line': b'\x1b[0m\n'}
+[1.584265] (cashier_system) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):\n'}
+[1.584338] (cashier_system) StderrLine: {'line': b'  Use rosidl_get_typesupport_target() and target_link_libraries() instead of\n'}
+[1.584409] (cashier_system) StderrLine: {'line': b'  rosidl_target_interfaces()\n'}
+[1.584480] (cashier_system) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[1.584550] (cashier_system) StderrLine: {'line': b'  CMakeLists.txt:38 (rosidl_target_interfaces)\n'}
+[1.584627] (cashier_system) StderrLine: {'line': b'\n'}
+[1.584697] (cashier_system) StderrLine: {'line': b'\x1b[0m\n'}
+[1.585304] (cashier_system) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[1.585553] (cashier_system) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[1.585644] (cashier_system) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[1.586141] (cashier_system) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[1.586655] (cashier_system) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[1.586830] (cashier_system) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[1.587054] (cashier_system) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[1.588998] (cashier_system) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.602556] (-) TimerEvent: {}
+[1.609745] (cashier_system) StdoutLine: {'line': b'-- Generating done\n'}
+[1.618229] (cashier_system) StdoutLine: {'line': b'-- Build files have been written to: /home/priyanshi/ros2_ws/build/cashier_system\n'}
+[1.624722] (cashier_system) CommandEnded: {'returncode': 0}
+[1.625467] (cashier_system) JobProgress: {'identifier': 'cashier_system', 'progress': 'build'}
+[1.626900] (cashier_system) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/priyanshi/ros2_ws/build/cashier_system', '--', '-j16', '-l16'], 'cwd': '/home/priyanshi/ros2_ws/build/cashier_system', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_IN:en'), ('USER', 'priyanshi'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/priyanshi/ros2_ws/install/cashier_system/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/priyanshi'), ('OLDPWD', '/home/priyanshi/ros2_ws'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1711'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/priyanshi/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'priyanshi'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'priyanshi'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/priyanshi-Victus-by-HP-Gaming-Laptop-15-fa2xxx:@/tmp/.ICE-unix/1679,unix/priyanshi-Victus-by-HP-Gaming-Laptop-15-fa2xxx:/tmp/.ICE-unix/1679'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/278d6712_c81a_45ef_b34b_07a6790fb086'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.8AUWM3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.116'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/priyanshi/ros2_ws/install/cashier_system:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/priyanshi/ros2_ws/build/cashier_system'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/priyanshi/ros2_ws/install/cashier_system:/opt/ros/humble')]), 'shell': False}
+[1.671769] (cashier_system) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[1.675811] (cashier_system) StdoutLine: {'line': b'[  5%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[1.675991] (cashier_system) StdoutLine: {'line': b'[  7%] \x1b[32mBuilding CXX object CMakeFiles/display_node.dir/src/display_node.cpp.o\x1b[0m\n'}
+[1.678933] (cashier_system) StdoutLine: {'line': b'[ 10%] \x1b[34m\x1b[1mGenerating Rust code for ROS interfaces\x1b[0m\n'}
+[1.683246] (cashier_system) StdoutLine: {'line': b'[ 10%] Built target ament_cmake_python_copy_cashier_system\n'}
+[1.702663] (-) TimerEvent: {}
+[1.803071] (-) TimerEvent: {}
+[1.833181] (cashier_system) StdoutLine: {'line': b'[ 10%] Built target cashier_system__rs\n'}
+[1.837268] (cashier_system) StdoutLine: {'line': b'running egg_info\n'}
+[1.837820] (cashier_system) StdoutLine: {'line': b'creating cashier_system.egg-info\n'}
+[1.838187] (cashier_system) StdoutLine: {'line': b'[ 10%] Built target cashier_system__cpp\n'}
+[1.838329] (cashier_system) StdoutLine: {'line': b'writing cashier_system.egg-info/PKG-INFO\n'}
+[1.838429] (cashier_system) StdoutLine: {'line': b'writing dependency_links to cashier_system.egg-info/dependency_links.txt\n'}
+[1.838584] (cashier_system) StdoutLine: {'line': b'writing top-level names to cashier_system.egg-info/top_level.txt\n'}
+[1.838742] (cashier_system) StdoutLine: {'line': b"writing manifest file 'cashier_system.egg-info/SOURCES.txt'\n"}
+[1.840237] (cashier_system) StdoutLine: {'line': b"reading manifest file 'cashier_system.egg-info/SOURCES.txt'\n"}
+[1.840560] (cashier_system) StdoutLine: {'line': b"writing manifest file 'cashier_system.egg-info/SOURCES.txt'\n"}
+[1.846294] (cashier_system) StdoutLine: {'line': b'[ 18%] \x1b[32mBuilding C object CMakeFiles/cashier_system__rosidl_generator_c.dir/rosidl_generator_c/cashier_system/msg/detail/bill__functions.c.o\x1b[0m\n'}
+[1.846539] (cashier_system) StdoutLine: {'line': b'[ 18%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[1.846633] (cashier_system) StdoutLine: {'line': b'[ 18%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[1.846720] (cashier_system) StdoutLine: {'line': b'[ 21%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[1.865455] (cashier_system) StdoutLine: {'line': b'[ 21%] Built target ament_cmake_python_build_cashier_system_egg\n'}
+[1.885142] (cashier_system) StdoutLine: {'line': b'[ 23%] \x1b[32m\x1b[1mLinking C shared library libcashier_system__rosidl_generator_c.so\x1b[0m\n'}
+[1.903171] (-) TimerEvent: {}
+[1.921378] (cashier_system) StdoutLine: {'line': b'[ 23%] Built target cashier_system__rosidl_generator_c\n'}
+[1.929239] (cashier_system) StdoutLine: {'line': b'[ 26%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[1.931574] (cashier_system) StdoutLine: {'line': b'[ 28%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[1.931848] (cashier_system) StdoutLine: {'line': b'[ 31%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[1.996932] (cashier_system) StdoutLine: {'line': b'[ 34%] \x1b[32mBuilding CXX object CMakeFiles/cashier_system__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/cashier_system/msg/bill__type_support.cpp.o\x1b[0m\n'}
+[2.002990] (cashier_system) StdoutLine: {'line': b'[ 36%] \x1b[32mBuilding CXX object CMakeFiles/cashier_system__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/cashier_system/msg/detail/bill__type_support.cpp.o\x1b[0m\n'}
+[2.003414] (-) TimerEvent: {}
+[2.011966] (cashier_system) StdoutLine: {'line': b'[ 39%] \x1b[32mBuilding CXX object CMakeFiles/cashier_system__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/cashier_system/msg/detail/dds_fastrtps/bill__type_support.cpp.o\x1b[0m\n'}
+[2.085221] (cashier_system) StdoutLine: {'line': b'[ 42%] \x1b[32mBuilding CXX object CMakeFiles/cashier_system__rosidl_typesupport_c.dir/rosidl_typesupport_c/cashier_system/msg/bill__type_support.cpp.o\x1b[0m\n'}
+[2.103517] (-) TimerEvent: {}
+[2.106335] (cashier_system) StdoutLine: {'line': b'[ 44%] \x1b[32m\x1b[1mLinking CXX shared library libcashier_system__rosidl_typesupport_c.so\x1b[0m\n'}
+[2.111628] (cashier_system) StdoutLine: {'line': b'[ 47%] \x1b[32mBuilding CXX object CMakeFiles/cashier_system__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/cashier_system/msg/detail/bill__type_support_c.cpp.o\x1b[0m\n'}
+[2.137047] (cashier_system) StdoutLine: {'line': b'[ 47%] Built target cashier_system__rosidl_typesupport_c\n'}
+[2.167616] (cashier_system) StdoutLine: {'line': b'[ 50%] \x1b[32m\x1b[1mLinking CXX shared library libcashier_system__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[2.198946] (cashier_system) StdoutLine: {'line': b'[ 52%] \x1b[32mBuilding C object CMakeFiles/cashier_system__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/cashier_system/msg/detail/bill__type_support.c.o\x1b[0m\n'}
+[2.203623] (-) TimerEvent: {}
+[2.207603] (cashier_system) StdoutLine: {'line': b'[ 52%] Built target cashier_system__rosidl_typesupport_cpp\n'}
+[2.228777] (cashier_system) StdoutLine: {'line': b'[ 55%] \x1b[32m\x1b[1mLinking C shared library libcashier_system__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[2.247091] (cashier_system) StdoutLine: {'line': b'[ 57%] \x1b[32m\x1b[1mLinking CXX shared library libcashier_system__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[2.252036] (cashier_system) StdoutLine: {'line': b'[ 57%] Built target cashier_system__rosidl_typesupport_introspection_c\n'}
+[2.269862] (cashier_system) StdoutLine: {'line': b'[ 60%] \x1b[32m\x1b[1mLinking CXX shared library libcashier_system__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[2.296039] (cashier_system) StdoutLine: {'line': b'[ 60%] Built target cashier_system__rosidl_typesupport_introspection_cpp\n'}
+[2.303730] (-) TimerEvent: {}
+[2.322179] (cashier_system) StdoutLine: {'line': b'[ 63%] \x1b[32m\x1b[1mLinking CXX shared library libcashier_system__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[2.328537] (cashier_system) StdoutLine: {'line': b'[ 63%] Built target cashier_system__rosidl_typesupport_fastrtps_cpp\n'}
+[2.374542] (cashier_system) StdoutLine: {'line': b'[ 63%] Built target cashier_system__rosidl_typesupport_fastrtps_c\n'}
+[2.391068] (cashier_system) StdoutLine: {'line': b'[ 63%] Built target cashier_system\n'}
+[2.403856] (-) TimerEvent: {}
+[2.404972] (cashier_system) StdoutLine: {'line': b'[ 65%] \x1b[32mBuilding CXX object CMakeFiles/inventory_node.dir/src/inventory_node.cpp.o\x1b[0m\n'}
+[2.407192] (cashier_system) StdoutLine: {'line': b'[ 68%] \x1b[32mBuilding CXX object CMakeFiles/billing_node.dir/src/billing_node.cpp.o\x1b[0m\n'}
+[2.408038] (cashier_system) StdoutLine: {'line': b'[ 71%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[2.504068] (-) TimerEvent: {}
+[2.593055] (cashier_system) StdoutLine: {'line': b'[ 71%] Built target cashier_system__py\n'}
+[2.604179] (-) TimerEvent: {}
+[2.611339] (cashier_system) StdoutLine: {'line': b'[ 73%] \x1b[32mBuilding C object CMakeFiles/cashier_system__rosidl_generator_py.dir/rosidl_generator_py/cashier_system/msg/_bill_s.c.o\x1b[0m\n'}
+[2.685389] (cashier_system) StdoutLine: {'line': b'[ 76%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/cashier_system/libcashier_system__rosidl_generator_py.so\x1b[0m\n'}
+[2.704299] (-) TimerEvent: {}
+[2.722730] (cashier_system) StdoutLine: {'line': b'[ 76%] Built target cashier_system__rosidl_generator_py\n'}
+[2.739047] (cashier_system) StdoutLine: {'line': b'[ 81%] \x1b[32mBuilding C object CMakeFiles/cashier_system__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/cashier_system/_cashier_system_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[2.739301] (cashier_system) StdoutLine: {'line': b'[ 81%] \x1b[32mBuilding C object CMakeFiles/cashier_system__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/cashier_system/_cashier_system_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[2.742908] (cashier_system) StdoutLine: {'line': b'[ 84%] \x1b[32mBuilding C object CMakeFiles/cashier_system__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/cashier_system/_cashier_system_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[2.804414] (-) TimerEvent: {}
+[2.804904] (cashier_system) StdoutLine: {'line': b'[ 86%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/cashier_system/cashier_system_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[2.808636] (cashier_system) StdoutLine: {'line': b'[ 89%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/cashier_system/cashier_system_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[2.811384] (cashier_system) StdoutLine: {'line': b'[ 92%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/cashier_system/cashier_system_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[2.834690] (cashier_system) StdoutLine: {'line': b'[ 92%] Built target cashier_system__rosidl_typesupport_introspection_c__pyext\n'}
+[2.835681] (cashier_system) StdoutLine: {'line': b'[ 92%] Built target cashier_system__rosidl_typesupport_fastrtps_c__pyext\n'}
+[2.840662] (cashier_system) StdoutLine: {'line': b'[ 92%] Built target cashier_system__rosidl_typesupport_c__pyext\n'}
+[2.904606] (-) TimerEvent: {}
+[3.005060] (-) TimerEvent: {}
+[3.105430] (-) TimerEvent: {}
+[3.205837] (-) TimerEvent: {}
+[3.306219] (-) TimerEvent: {}
+[3.406593] (-) TimerEvent: {}
+[3.506954] (-) TimerEvent: {}
+[3.607331] (-) TimerEvent: {}
+[3.707712] (-) TimerEvent: {}
+[3.808100] (-) TimerEvent: {}
+[3.908478] (-) TimerEvent: {}
+[4.008856] (-) TimerEvent: {}
+[4.109222] (-) TimerEvent: {}
+[4.209589] (-) TimerEvent: {}
+[4.309962] (-) TimerEvent: {}
+[4.410341] (-) TimerEvent: {}
+[4.510716] (-) TimerEvent: {}
+[4.611089] (-) TimerEvent: {}
+[4.711440] (-) TimerEvent: {}
+[4.811804] (-) TimerEvent: {}
+[4.912077] (-) TimerEvent: {}
+[5.012450] (-) TimerEvent: {}
+[5.112827] (-) TimerEvent: {}
+[5.145830] (cashier_system) StdoutLine: {'line': b'[ 94%] \x1b[32m\x1b[1mLinking CXX executable billing_node\x1b[0m\n'}
+[5.213041] (-) TimerEvent: {}
+[5.270299] (cashier_system) StdoutLine: {'line': b'[ 94%] Built target billing_node\n'}
+[5.313229] (-) TimerEvent: {}
+[5.413564] (-) TimerEvent: {}
+[5.513914] (-) TimerEvent: {}
+[5.614155] (-) TimerEvent: {}
+[5.714492] (-) TimerEvent: {}
+[5.814840] (-) TimerEvent: {}
+[5.915067] (-) TimerEvent: {}
+[6.015388] (-) TimerEvent: {}
+[6.115714] (-) TimerEvent: {}
+[6.216050] (-) TimerEvent: {}
+[6.316421] (-) TimerEvent: {}
+[6.416874] (-) TimerEvent: {}
+[6.517210] (-) TimerEvent: {}
+[6.617536] (-) TimerEvent: {}
+[6.717889] (-) TimerEvent: {}
+[6.818223] (-) TimerEvent: {}
+[6.887580] (cashier_system) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking CXX executable display_node\x1b[0m\n'}
+[6.918346] (-) TimerEvent: {}
+[7.018674] (-) TimerEvent: {}
+[7.118974] (-) TimerEvent: {}
+[7.124820] (cashier_system) StdoutLine: {'line': b'[ 97%] Built target display_node\n'}
+[7.219160] (-) TimerEvent: {}
+[7.319485] (-) TimerEvent: {}
+[7.419743] (-) TimerEvent: {}
+[7.519984] (-) TimerEvent: {}
+[7.620508] (-) TimerEvent: {}
+[7.720859] (-) TimerEvent: {}
+[7.821242] (-) TimerEvent: {}
+[7.839313] (cashier_system) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable inventory_node\x1b[0m\n'}
+[7.921427] (-) TimerEvent: {}
+[8.021758] (-) TimerEvent: {}
+[8.090471] (cashier_system) StdoutLine: {'line': b'[100%] Built target inventory_node\n'}
+[8.098783] (cashier_system) CommandEnded: {'returncode': 0}
+[8.099904] (cashier_system) JobProgress: {'identifier': 'cashier_system', 'progress': 'install'}
+[8.109804] (cashier_system) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/priyanshi/ros2_ws/build/cashier_system'], 'cwd': '/home/priyanshi/ros2_ws/build/cashier_system', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_IN:en'), ('USER', 'priyanshi'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/priyanshi/ros2_ws/install/cashier_system/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/priyanshi'), ('OLDPWD', '/home/priyanshi/ros2_ws'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1711'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/priyanshi/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'priyanshi'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'priyanshi'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/priyanshi-Victus-by-HP-Gaming-Laptop-15-fa2xxx:@/tmp/.ICE-unix/1679,unix/priyanshi-Victus-by-HP-Gaming-Laptop-15-fa2xxx:/tmp/.ICE-unix/1679'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/278d6712_c81a_45ef_b34b_07a6790fb086'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.8AUWM3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.116'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/priyanshi/ros2_ws/install/cashier_system:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/priyanshi/ros2_ws/build/cashier_system'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/priyanshi/ros2_ws/install/cashier_system:/opt/ros/humble')]), 'shell': False}
+[8.121134] (cashier_system) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[8.121439] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/ament_index/resource_index/rosidl_interfaces/cashier_system\n'}
+[8.121603] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system\n'}
+[8.121714] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg\n'}
+[8.121964] (-) TimerEvent: {}
+[8.122295] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/detail\n'}
+[8.122469] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/detail/bill__functions.c\n'}
+[8.122546] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/detail/bill__functions.h\n'}
+[8.122610] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/detail/bill__type_support.h\n'}
+[8.122673] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/detail/bill__struct.h\n'}
+[8.122735] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/rosidl_generator_c__visibility_control.h\n'}
+[8.122806] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/bill.h\n'}
+[8.122868] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/environment/library_path.sh\n'}
+[8.122925] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/environment/library_path.dsv\n'}
+[8.123020] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/lib/libcashier_system__rosidl_generator_c.so\n'}
+[8.123152] (cashier_system) StdoutLine: {'line': b'-- Set runtime path of "/home/priyanshi/ros2_ws/install/cashier_system/lib/libcashier_system__rosidl_generator_c.so" to ""\n'}
+[8.123215] (cashier_system) StdoutLine: {'line': b'-- Up-to-date: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system\n'}
+[8.123273] (cashier_system) StdoutLine: {'line': b'-- Up-to-date: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg\n'}
+[8.123332] (cashier_system) StdoutLine: {'line': b'-- Up-to-date: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/detail\n'}
+[8.123394] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/detail/bill__rosidl_typesupport_fastrtps_c.h\n'}
+[8.123453] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[8.123540] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/lib/libcashier_system__rosidl_typesupport_fastrtps_c.so\n'}
+[8.123598] (cashier_system) StdoutLine: {'line': b'-- Set runtime path of "/home/priyanshi/ros2_ws/install/cashier_system/lib/libcashier_system__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[8.123697] (cashier_system) StdoutLine: {'line': b'-- Up-to-date: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system\n'}
+[8.123825] (cashier_system) StdoutLine: {'line': b'-- Up-to-date: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg\n'}
+[8.123885] (cashier_system) StdoutLine: {'line': b'-- Up-to-date: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/detail\n'}
+[8.123938] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/detail/bill__builder.hpp\n'}
+[8.123990] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/detail/bill__traits.hpp\n'}
+[8.124041] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/detail/bill__type_support.hpp\n'}
+[8.124118] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/detail/bill__struct.hpp\n'}
+[8.124169] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[8.124220] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/bill.hpp\n'}
+[8.124320] (cashier_system) StdoutLine: {'line': b'-- Up-to-date: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system\n'}
+[8.124377] (cashier_system) StdoutLine: {'line': b'-- Up-to-date: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg\n'}
+[8.124429] (cashier_system) StdoutLine: {'line': b'-- Up-to-date: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/detail\n'}
+[8.124484] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/detail/bill__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[8.124540] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/detail/dds_fastrtps\n'}
+[8.124592] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[8.124673] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/lib/libcashier_system__rosidl_typesupport_fastrtps_cpp.so\n'}
+[8.124798] (cashier_system) StdoutLine: {'line': b'-- Set runtime path of "/home/priyanshi/ros2_ws/install/cashier_system/lib/libcashier_system__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[8.124868] (cashier_system) StdoutLine: {'line': b'-- Up-to-date: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system\n'}
+[8.124942] (cashier_system) StdoutLine: {'line': b'-- Up-to-date: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg\n'}
+[8.124998] (cashier_system) StdoutLine: {'line': b'-- Up-to-date: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/detail\n'}
+[8.125055] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/detail/bill__rosidl_typesupport_introspection_c.h\n'}
+[8.125153] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/detail/bill__type_support.c\n'}
+[8.125202] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[8.125248] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/lib/libcashier_system__rosidl_typesupport_introspection_c.so\n'}
+[8.125294] (cashier_system) StdoutLine: {'line': b'-- Set runtime path of "/home/priyanshi/ros2_ws/install/cashier_system/lib/libcashier_system__rosidl_typesupport_introspection_c.so" to ""\n'}
+[8.125340] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/lib/libcashier_system__rosidl_typesupport_c.so\n'}
+[8.125418] (cashier_system) StdoutLine: {'line': b'-- Set runtime path of "/home/priyanshi/ros2_ws/install/cashier_system/lib/libcashier_system__rosidl_typesupport_c.so" to ""\n'}
+[8.125508] (cashier_system) StdoutLine: {'line': b'-- Up-to-date: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system\n'}
+[8.125558] (cashier_system) StdoutLine: {'line': b'-- Up-to-date: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg\n'}
+[8.125606] (cashier_system) StdoutLine: {'line': b'-- Up-to-date: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/detail\n'}
+[8.125651] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/detail/bill__type_support.cpp\n'}
+[8.125697] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/include/cashier_system/cashier_system/msg/detail/bill__rosidl_typesupport_introspection_cpp.hpp\n'}
+[8.125786] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/lib/libcashier_system__rosidl_typesupport_introspection_cpp.so\n'}
+[8.125840] (cashier_system) StdoutLine: {'line': b'-- Set runtime path of "/home/priyanshi/ros2_ws/install/cashier_system/lib/libcashier_system__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[8.125886] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/lib/libcashier_system__rosidl_typesupport_cpp.so\n'}
+[8.125962] (cashier_system) StdoutLine: {'line': b'-- Set runtime path of "/home/priyanshi/ros2_ws/install/cashier_system/lib/libcashier_system__rosidl_typesupport_cpp.so" to ""\n'}
+[8.126051] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/environment/pythonpath.sh\n'}
+[8.126101] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/environment/pythonpath.dsv\n'}
+[8.126175] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system-0.0.0-py3.10.egg-info\n'}
+[8.126257] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[8.126349] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[8.126393] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[8.126460] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[8.126510] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system\n'}
+[8.126582] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system/msg\n'}
+[8.126662] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system/msg/_bill.py\n'}
+[8.126708] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system/msg/__init__.py\n'}
+[8.126780] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system/msg/_bill_s.c\n'}
+[8.126864] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system/_cashier_system_s.ep.rosidl_typesupport_c.c\n'}
+[8.126904] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system/libcashier_system__rosidl_generator_py.so\n'}
+[8.126968] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system/_cashier_system_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[8.127035] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system/cashier_system_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[8.127076] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system/__init__.py\n'}
+[8.127139] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system/cashier_system_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[8.127205] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system/cashier_system_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[8.127269] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system/_cashier_system_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[8.153109] (cashier_system) StdoutLine: {'line': b"Listing '/home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system'...\n"}
+[8.153253] (cashier_system) StdoutLine: {'line': b"Compiling '/home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system/__init__.py'...\n"}
+[8.153328] (cashier_system) StdoutLine: {'line': b"Listing '/home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system/msg'...\n"}
+[8.153391] (cashier_system) StdoutLine: {'line': b"Compiling '/home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system/msg/__init__.py'...\n"}
+[8.153446] (cashier_system) StdoutLine: {'line': b"Compiling '/home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system/msg/_bill.py'...\n"}
+[8.156518] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system/cashier_system_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[8.156691] (cashier_system) StdoutLine: {'line': b'-- Set runtime path of "/home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system/cashier_system_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[8.156826] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system/cashier_system_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[8.156869] (cashier_system) StdoutLine: {'line': b'-- Set runtime path of "/home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system/cashier_system_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[8.156909] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system/cashier_system_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[8.157125] (cashier_system) StdoutLine: {'line': b'-- Set runtime path of "/home/priyanshi/ros2_ws/install/cashier_system/local/lib/python3.10/dist-packages/cashier_system/cashier_system_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[8.157201] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/lib/libcashier_system__rosidl_generator_py.so\n'}
+[8.157351] (cashier_system) StdoutLine: {'line': b'-- Set runtime path of "/home/priyanshi/ros2_ws/install/cashier_system/lib/libcashier_system__rosidl_generator_py.so" to ""\n'}
+[8.157423] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/ament_index/resource_index/rust_packages/cashier_system\n'}
+[8.157458] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/rust\n'}
+[8.157491] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/rust/src\n'}
+[8.157564] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/rust/src/msg\n'}
+[8.157596] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/rust/src/msg/rmw.rs\n'}
+[8.157648] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/rust/src/msg.rs\n'}
+[8.157676] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/rust/src/lib.rs\n'}
+[8.157705] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/rust/build.rs\n'}
+[8.157733] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/rust/Cargo.toml\n'}
+[8.157761] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/msg/Bill.idl\n'}
+[8.157789] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/msg/Bill.msg\n'}
+[8.157849] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/lib/cashier_system/billing_node\n'}
+[8.158248] (cashier_system) StdoutLine: {'line': b'-- Set runtime path of "/home/priyanshi/ros2_ws/install/cashier_system/lib/cashier_system/billing_node" to ""\n'}
+[8.158286] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/lib/cashier_system/inventory_node\n'}
+[8.160077] (cashier_system) StdoutLine: {'line': b'-- Set runtime path of "/home/priyanshi/ros2_ws/install/cashier_system/lib/cashier_system/inventory_node" to ""\n'}
+[8.160152] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/lib/cashier_system/display_node\n'}
+[8.161856] (cashier_system) StdoutLine: {'line': b'-- Set runtime path of "/home/priyanshi/ros2_ws/install/cashier_system/lib/cashier_system/display_node" to ""\n'}
+[8.161953] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/ament_index/resource_index/package_run_dependencies/cashier_system\n'}
+[8.162022] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/ament_index/resource_index/parent_prefix_path/cashier_system\n'}
+[8.162056] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/environment/ament_prefix_path.sh\n'}
+[8.162129] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/environment/ament_prefix_path.dsv\n'}
+[8.162169] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/environment/path.sh\n'}
+[8.162200] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/environment/path.dsv\n'}
+[8.162257] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/local_setup.bash\n'}
+[8.162288] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/local_setup.sh\n'}
+[8.162338] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/local_setup.zsh\n'}
+[8.162395] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/local_setup.dsv\n'}
+[8.162425] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/package.dsv\n'}
+[8.162470] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/ament_index/resource_index/packages/cashier_system\n'}
+[8.162525] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/cmake/export_cashier_system__rosidl_generator_cExport.cmake\n'}
+[8.162580] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/cmake/export_cashier_system__rosidl_generator_cExport-noconfig.cmake\n'}
+[8.162636] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/cmake/export_cashier_system__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[8.162689] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/cmake/export_cashier_system__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[8.162744] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/cmake/export_cashier_system__rosidl_generator_cppExport.cmake\n'}
+[8.162802] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/cmake/export_cashier_system__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[8.162851] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/cmake/export_cashier_system__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[8.162908] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/cmake/cashier_system__rosidl_typesupport_introspection_cExport.cmake\n'}
+[8.162956] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/cmake/cashier_system__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[8.163010] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/cmake/cashier_system__rosidl_typesupport_cExport.cmake\n'}
+[8.163060] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/cmake/cashier_system__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[8.163118] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/cmake/cashier_system__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[8.163167] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/cmake/cashier_system__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[8.163237] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/cmake/cashier_system__rosidl_typesupport_cppExport.cmake\n'}
+[8.163289] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/cmake/cashier_system__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[8.163342] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/cmake/export_cashier_system__rosidl_generator_pyExport.cmake\n'}
+[8.163392] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/cmake/export_cashier_system__rosidl_generator_pyExport-noconfig.cmake\n'}
+[8.163443] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/cmake/rosidl_cmake-extras.cmake\n'}
+[8.163495] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[8.163547] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[8.163662] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[8.163690] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[8.163760] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[8.163789] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[8.163840] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/cmake/cashier_systemConfig.cmake\n'}
+[8.163887] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/cmake/cashier_systemConfig-version.cmake\n'}
+[8.163933] (cashier_system) StdoutLine: {'line': b'-- Installing: /home/priyanshi/ros2_ws/install/cashier_system/share/cashier_system/package.xml\n'}
+[8.165740] (cashier_system) CommandEnded: {'returncode': 0}
+[8.178731] (cashier_system) JobEnded: {'identifier': 'cashier_system', 'rc': 0}
+[8.179468] (-) EventReactorShutdown: {}
