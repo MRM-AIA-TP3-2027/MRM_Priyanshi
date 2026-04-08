@@ -77,7 +77,7 @@ The RQT graph shows the communication between nodes and topics.
 
 This forms a **closed-loop navigation system**.
 
-![RQT Graph](images/rqt_graph.png)
+![RQT Graph](rqt_graph.png)
 
 ---
 
