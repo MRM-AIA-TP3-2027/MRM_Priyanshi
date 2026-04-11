@@ -33,6 +33,7 @@ ENU gpsToENU(double lat, double lon)
     };
 }
 
+// Fix: removed extra 0
 double wrapAngle(double a)
 {
     while (a > M_PI) a -= 2*M_PI;
@@ -51,11 +52,8 @@ class GlobalPlanner : public rclcpp::Node
 public:
     GlobalPlanner() : Node("global_planner_node")
     {
-        // Publishers
-        cmd_pub_ = create_publisher<geometry_msgs::msg::Twist>(
-            "/tars/cmd_vel", 10);
+        cmd_pub_ = create_publisher<geometry_msgs::msg::Twist>("/tars/cmd_vel", 10);
 
-        // Subscribers
         odom_sub_ = create_subscription<nav_msgs::msg::Odometry>(
             "/tars/odom", 10,
             std::bind(&GlobalPlanner::odomCb, this, _1));
@@ -64,16 +62,13 @@ public:
             "/goal_gps", 10,
             std::bind(&GlobalPlanner::goalCb, this, _1));
 
-        // Service
-        spawn_client_ = create_client<gazebo_msgs::srv::SpawnEntity>(
-            "/spawn_entity");
+        spawn_client_ = create_client<gazebo_msgs::srv::SpawnEntity>("/spawn_entity");
 
-        // Timer loop
         timer_ = create_wall_timer(
             std::chrono::milliseconds(100),
             std::bind(&GlobalPlanner::loop, this));
 
-        RCLCPP_INFO(get_logger(), "🚀 Global Planner READY (topic-based)");
+        RCLCPP_INFO(get_logger(), "🚀 Global Planner READY");
     }
 
 private:
@@ -84,6 +79,9 @@ private:
     double smooth_yaw_=0;
     bool yaw_init_=false;
     bool odom_ok_=false;
+
+    double start_x_=0, start_y_=0;
+    bool start_set_=false;
 
     double goal_x_=0, goal_y_=0;
 
@@ -106,7 +104,6 @@ private:
             msg->pose.pose.orientation.z,
             msg->pose.pose.orientation.w);
 
-        // Smooth yaw
         if (!yaw_init_) {
             smooth_yaw_ = raw;
             yaw_init_ = true;
@@ -126,6 +123,13 @@ private:
 
         goal_x_ = g.east;
         goal_y_ = g.north;
+
+        // Save start position once
+        if (!start_set_) {
+            start_x_ = cur_x_;
+            start_y_ = cur_y_;
+            start_set_ = true;
+        }
 
         state_ = State::ROTATING;
 
@@ -150,9 +154,22 @@ private:
         }
     }
 
+    // ───────────────────────────────────────────────
     double dist()
     {
         return hypot(goal_x_-cur_x_, goal_y_-cur_y_);
+    }
+
+    double crossTrackError()
+    {
+        double num = fabs((goal_y_ - start_y_) * cur_x_
+                        - (goal_x_ - start_x_) * cur_y_
+                        + goal_x_ * start_y_
+                        - goal_y_ * start_x_);
+
+        double den = hypot(goal_y_ - start_y_, goal_x_ - start_x_);
+
+        return num / den;
     }
 
     double bearing()
@@ -184,6 +201,12 @@ private:
     void drive()
     {
         double d = dist();
+        double cte = crossTrackError();
+
+        RCLCPP_INFO(get_logger(),
+            "Residual: %.3f m | Cross-track: %.3f m",
+            d, cte);
+
         double err = wrapAngle(bearing() - cur_yaw_);
 
         if (d < 0.5)
@@ -202,7 +225,6 @@ private:
 
         geometry_msgs::msg::Twist cmd;
 
-        // Slow near goal
         double scale = std::min(1.0, d/2.0);
         cmd.linear.x = 0.4 * std::max(scale, 0.3);
 
