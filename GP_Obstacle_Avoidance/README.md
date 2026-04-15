@@ -95,6 +95,7 @@ The navigation system operates using the following states:
 ## 3. RQT Graph
 
 Below is the RQT graph of the system showing node and topic connections:
+![RQT Graph](images/rqt_graph_oa.png)
 
 
 ### Explanation
