@@ -391,7 +391,7 @@ public:
             [this](sensor_msgs::msg::LaserScan::SharedPtr m){ lidar_.update(*m); });
 
         depth_sub_ = create_subscription<sensor_msgs::msg::Image>(
-            "/depth/image_raw", sq,
+            "/depth/depth/image_raw", sq,
             [this](sensor_msgs::msg::Image::SharedPtr m){ depth_.update(*m); });
 
         goal_sub_ = create_subscription<sensor_msgs::msg::NavSatFix>(
