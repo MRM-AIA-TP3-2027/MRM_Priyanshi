@@ -27,6 +27,9 @@ static constexpr double DEG      = 180.0 / M_PI;
 // Obstacle thresholds (metres)
 static constexpr double STOP_D   = 0.55;   // emergency backup
 static constexpr double SLOW_D   = 0.80;   // start avoidance / slow down
+// Wall-following: left-side hard safety distance
+static constexpr double WF_LEFT_STOP  = 0.35;  // stop forward motion if wall this close [m]
+static constexpr double WF_LEFT_SLOW  = 0.55;  // start slowing if wall this close [m]
 
 // LiDAR VFH sectors
 static constexpr int    NSEC     = 36;     // 10° per sector
@@ -40,11 +43,11 @@ static constexpr double DEPTH_STRIP = 0.30; // central 30% columns
 static constexpr double DEPTH_MAX   = 8.0;  // ignore readings beyond this
 
 // Wall-Following parameters
-static constexpr double WF_WALL_DIST     = 0.70;  // desired distance to left wall [m]
+static constexpr double WF_WALL_DIST     = 0.7;  // desired distance to left wall [m]
 static constexpr double WF_WALL_GAIN     = 1.2;   // P-gain for wall-distance error
-static constexpr double WF_FRONT_TURN    = 0.65;  // front dist that triggers a right turn [m]
-static constexpr double CLEAR_BEARING_TOL = 1.05; // ~60° — max |bearingError| to exit WF [rad]
-static constexpr double WF_MIN_TRAVEL    = 0.60;  // min metres moved before WF can exit [m]
+static constexpr double WF_FRONT_TURN    = 0.85;  // front dist that triggers a right turn [m]
+static constexpr double CLEAR_BEARING_TOL = 1.48; // ~60° — max |bearingError| to exit WF [rad]
+static constexpr double WF_MIN_TRAVEL    = 0.6;  // min metres moved before WF can exit [m]
 
 // ═══════════════════════════════════════════════════════════════════════════════
 //  State Machine
@@ -211,6 +214,33 @@ public:
         return md;
     }
 
+    // ── Front-left diagonal distance (30°–60° left of forward) ───────────────
+    // Covers the blind spot between frontBlocked() and left_dist().
+    // For NSEC=36: sector 21≈-30°... wait — left side positive angles.
+    // Sector 14 ≈ +140°? No — let's be precise:
+    // sectorAngle(s) = -π + (s+0.5)*(2π/36)
+    // s=15 → -π + 15.5*(0.1745) = -π + 2.705 = -0.436 rad = -25° (right!)
+    // s=14 → -π + 14.5*0.1745   = -π + 2.530 = -0.611 rad  
+    // Left side positive: s=3→+25°, s=4→+35°... let me recalculate:
+    // -π + (s+0.5)*(2π/36):
+    // s=0 → -π+0.0873 = -3.054 (≈ -175°)
+    // s=9 → -π+0.9817*π... 
+    // Actually: angle = -π + (s+0.5)*(2π/36) = -π + (s+0.5)*10°*(π/180)*...
+    // = (s+0.5)*10° - 180°
+    // s=18 → 185°-180° = +5°  (near forward)
+    // s=21 → 215°-180° = +35° (front-LEFT diagonal ✓)
+    // s=22 → 225°-180° = +45° (front-LEFT diagonal ✓)  
+    // s=23 → 235°-180° = +55° (front-LEFT diagonal ✓)
+    // So front-left diagonal = sectors 20–23
+    float front_left_dist() const
+    {
+        float md = 99.f;
+        // Sectors 20–23 cover ~+25° to +55° (front-left diagonal)
+        for (int s = 20; s <= 23; ++s)
+            md = std::min(md, sec_[s]);
+        return md;
+    }
+
     // Best free steering angle (robot frame) biased toward goalAngle
     // Only checks ±90° forward sectors (no phantom avoidance from sides)
     double bestAngle(double goalAngle) const
@@ -351,6 +381,9 @@ class ObstacleAvoidanceNode : public rclcpp::Node
     double wf_entry_n_       = 0;
     double wf_dist_moved_    = 0;  // metres moved since WF started
     int    wf_stuck_counter_ = 0;  // counts consecutive stuck ticks in WF
+    // Wall-following: smoothed left distance for P-D control
+double wf_left_prev_    = WF_WALL_DIST;   // previous tick's left distance
+double wf_left_smooth_  = WF_WALL_DIST;   // EMA-smoothed left distance
 
     // ── Tuning ────────────────────────────────────────────────────────────────
     double lin_  = 0.4;   // max forward speed
@@ -642,6 +675,8 @@ private:
         wf_dist_moved_    = 0.0;
         wf_stuck_counter_ = 0;
         minima_.reset();
+        wf_left_prev_   = WF_WALL_DIST;
+        wf_left_smooth_ = WF_WALL_DIST;
         state_ = State::WALL_FOLLOWING;
         RCLCPP_INFO(get_logger(),
             "[WF] Wall-Following STARTED at (%.2f, %.2f) — left-hand rule",
@@ -717,30 +752,90 @@ private:
             wf_stuck_counter_ = 0;
         }
 
-        // ── RULE 1: Front blocked → turn right (clockwise) ────────────────────
-        if (front < WF_FRONT_TURN) {
-            // Turn right to clear the frontal wall — no forward motion
-            publish(0.0, -ang_ * 0.75);
-            RCLCPP_WARN_THROTTLE(get_logger(), *get_clock(), 400,
-                "[WF] Front blocked (%.2fm) — turning right", front);
-            return;
-        }
+        // ── RULE 1: Front OR front-left diagonal blocked → turn right ─────────
+    // front_left catches the corner-clipping blind spot: the zone between
+    // the ±25° frontal cone and the left-flank sectors (45°–135°).
+    double front_left = static_cast<double>(lidar_.front_left_dist());
 
-        // ── RULE 2: Left wall present → P-control wall distance ───────────────
-        // Target: maintain WF_WALL_DIST to the left wall.
-        // Error > 0  : too close  → steer right (negative angular.z)
-        // Error < 0  : too far    → steer left  (positive angular.z)
-        if (left < 2.0) {
-            double wall_err = WF_WALL_DIST - left;   // +: too close, -: too far
-            double az = std::clamp(-WF_WALL_GAIN * wall_err, -ang_, ang_);
-            double spd = lin_ * 0.55;
-            publish(spd, az);
-            RCLCPP_INFO_THROTTLE(get_logger(), *get_clock(), 600,
-                "[WF] Hugging left wall: left=%.2fm  err=%.2fm  az=%.2f",
-                left, wall_err, az);
-            return;
-        }
+    if (front < WF_FRONT_TURN || front_left < WF_WALL_DIST + 0.15) {
+        publish(0.0, -ang_ * 0.75);
+        RCLCPP_WARN_THROTTLE(get_logger(), *get_clock(), 400,
+            "[WF] Front/diagonal blocked (front=%.2fm fl=%.2fm) — turning right",
+            front, front_left);
+        return;
+    }
 
+        // ── RULE 2: Left wall present → PD-control wall distance ──────────────
+// Sign convention (ROS2): angular.z > 0 → turn LEFT, < 0 → turn RIGHT
+//
+// wall_err = left - WF_WALL_DIST
+//   wall_err > 0 : too far from wall  → steer LEFT  (+az)
+//   wall_err < 0 : too close to wall  → steer RIGHT (-az)
+//   ∴  az = +WF_WALL_GAIN * wall_err  (no negation needed)
+//
+// D-term damps oscillation: opposes the rate of change of distance.
+//   If robot is rapidly approaching wall (d_err < 0), add rightward nudge.
+//   If rapidly moving away   (d_err > 0), add leftward  nudge.
+if (left < 2.0) {
+    // ── LEFT WALL SAFETY OVERRIDE ─────────────────────────────────────────
+    // If we're critically close to the left wall, stop forward motion and
+    // turn hard right — regardless of PD output.
+    // Corner guard: front-left diagonal closes fast at convex corners
+    if (front_left < WF_LEFT_STOP + 0.1) {
+        publish(0.0, -ang_ * 0.85);
+        RCLCPP_WARN_THROTTLE(get_logger(), *get_clock(), 200,
+            "[WF] CORNER GUARD triggered (fl=%.2fm) — emergency right turn", front_left);
+        wf_left_prev_   = wf_left_smooth_;
+        return;
+    }
+    if (left < WF_LEFT_STOP) {
+        publish(0.0, -ang_ * 0.85);
+        RCLCPP_WARN_THROTTLE(get_logger(), *get_clock(), 200,
+            "[WF] LEFT WALL CRITICAL (%.2fm) — emergency right turn", left);
+        wf_left_prev_   = left;
+        wf_left_smooth_ = left;
+        return;
+    }
+    // If getting close, kill forward speed — turn only
+    if (left < WF_LEFT_SLOW) {
+        double wall_err = wf_left_smooth_ - WF_WALL_DIST;
+        double az = std::clamp(WF_WALL_GAIN * wall_err, -ang_ * 0.75, ang_ * 0.75);
+        publish(0.0, az);   // <-- zero linear speed when too close
+        wf_left_prev_   = left;
+        wf_left_smooth_ = left;
+        RCLCPP_WARN_THROTTLE(get_logger(), *get_clock(), 300,
+            "[WF] LEFT WALL close (%.2fm) — turning only, no forward", left);
+        return;
+    }
+
+    // ... rest of existing EMA + PD code follows unchanged ...
+
+    // EMA smoothing to suppress LiDAR corner spikes (α = 0.35)
+    constexpr double EMA_ALPHA = 0.35;
+    wf_left_smooth_ = EMA_ALPHA * left + (1.0 - EMA_ALPHA) * wf_left_smooth_;
+
+    double wall_err = wf_left_smooth_ - WF_WALL_DIST; // +: too far, -: too close
+    double d_err    = wf_left_smooth_ - wf_left_prev_; // rate of change per tick
+    wf_left_prev_   = wf_left_smooth_;
+
+    // PD control — both terms have the same sign sense
+    constexpr double WF_WALL_D_GAIN = 0.6;
+    double az = std::clamp(
+        WF_WALL_GAIN * wall_err + WF_WALL_D_GAIN * d_err,
+        -ang_ * 0.75,   // cap tighter than full ang_ to avoid sharp swings
+        ang_  * 0.75
+    );
+
+    // Scale speed down as we approach the wall — stop at WF_LEFT_SLOW
+    double proximity = std::clamp((left - WF_LEFT_SLOW) / (WF_WALL_DIST - WF_LEFT_SLOW), 0.0, 1.0);
+    double spd = lin_ * 0.50 * proximity;
+    publish(spd, az);
+    RCLCPP_INFO_THROTTLE(get_logger(), *get_clock(), 600,
+        "[WF] Hugging left wall: left_raw=%.2fm smooth=%.2fm "
+        "err=%.2fm d_err=%.3fm az=%.2f",
+        left, wf_left_smooth_, wall_err, d_err, az);
+    return;
+}
         // ── RULE 3: No left wall → arc left to find next wall segment ─────────
         // This happens at open corners: keep moving and sweep left.
         publish(lin_ * 0.45, ang_ * 0.55);
